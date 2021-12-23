@@ -12,7 +12,7 @@ my_ipk="quarterpounder.ipk"
 package_dir='quarterpounder/main/'
 MY_URL=$my_main_url$package_dir'/'$my_ipk
 fi
-MY_TMP_FILE="/tmp/"$my_ipk
+MY_TMP_FILE="/tmp/my_ipk"
 echo '**********************************************************'
 echo " download plugin "
 
@@ -32,6 +32,7 @@ echo "             UPLOADED BY EMIL_NABIL "
 wait
 sleep 2;
 exit 0
+
 
 
 
