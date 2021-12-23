@@ -8,7 +8,7 @@ echo ' download and install plugin quarterpouder '
 echo ' ====================================================================='
 wget -O /var/volatile/tmp/QuarterPounder.tar.gz "https://raw.githubusercontent.com/emil237/quarterpounder/main/QuarterPounder.tar.gz"
 wait 
-tar xzvpf /tmp/*.tar.gz  -C /
+tar -xzf /tmp/QuarterPounder.tar.gz  -C /
 wait
 rm -r /var/volatile/tmp/QuarterPounder.tar.gz                         
 
@@ -24,6 +24,8 @@ echo "#########################################################"
 wait
 sleep 2
 exit 0
+
+
 
 
 
