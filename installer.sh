@@ -1,45 +1,36 @@
-#!/bin/sh
-#
-#command wget https://raw.githubusercontent.com/emil237/quarterpounder/main/installer.sh -O - | /bin/sh  
-#
+#!/bin/sh # 
+ # # Command: wget https://raw.githubusercontent.com/emil237/quarterpounder/main/installer.sh -qO - | /bin/sh # # ########################################### ###########################################  
 MY_URL="https://raw.githubusercontent.com/emil237/quarterpounder/main"
 MY_FILE="QuarterPounder.tar.gz"
-echo ' download and install plugin quarterpouder '
-echo ' ====================================================================='
+echo "******************************************************************************************************************"
+echo "download and install quarterpounder"
+echo "============================================================================================================================="
+#####################################################################################
+echo "         install picon-amos   "
 cd /tmp
-set -e
-wget "$MY_URL/$MY_FILE"
-wait 
+set -e 
+      wget "$MY_URL/$MY_FILE"
+wait
 tar -xzf QuarterPounder.tar.gz  -C /
 wait
 cd ..
 set +e
-rm -f /tmp/QuarterPounder.tar.gz                         
+rm -f /tmp/QuarterPounder.tar.gz
+echo "==========================================================================================================================="
 
-echo "========================================================================"
-                
-	echo ".        WELCOME TO QUARTERPOUNDER "
-	
-echo "#    SCRIPT INSTALLED SUCCESSFULLY           #"
-echo "        UPLOADED BY EMIL_NABIL  "  
-sleep 4;   
-echo "#########################################################"
-echo "#########################################################"
+echo "# PLUGIN  INSTALLED SUCCESSFULLY #"
+echo "
+echo " "*********************************************************" 
+	echo "********************************************************************************"
+echo "   UPLOADED BY  >>>>   EMIL_NABIL "   
+sleep 4;
+	echo '========================================================================================================================='
+###########################################                                                                                                                  
+echo ". >>>>         RESTARING     <<<<"
+echo "**********************************************************************************"
 wait
-sleep 2
+killall -9 enigma2
 exit 0
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
