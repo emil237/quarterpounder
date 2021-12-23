@@ -1,45 +1,37 @@
-#!/bin/sh # 
- # # Command: wget https://raw.githubusercontent.com/emil237/quarterpounder/main/installer.sh -qO - | /bin/sh # # ########################################### ###########################################  
-MY_URL="https://raw.githubusercontent.com/emil237/quarterpounder/main"
-MY_FILE="QuarterPounder.tar.gz"
-echo "******************************************************************************************************************"
-echo "download and install quarterpounder"
-echo "============================================================================================================================="
-#####################################################################################
-echo "         install plugin   "
-cd /tmp
-set -e 
-      wget "$MY_URL/$MY_FILE"
-wait
-tar -xzf QuarterPounder.tar.gz  -C /
-wait
-cd ..
-set +e
-rm -f /tmp/QuarterPounder.tar.gz
-echo "==========================================================================================================================="
+#!/bin/sh
+#
+# command wget
+https://raw.githubusercontent.com/emil237/quarterpounder/main/installer.sh -O - | /bin/sh
+#
+#
+echo ' ============================================================================'
+echo " plugin quarterpouder "
 
-echo "# PLUGIN  INSTALLED SUCCESSFULLY #"
-echo "
-echo " "*********************************************************" 
-	echo "********************************************************************************"
-echo "   UPLOADED BY  >>>>   EMIL_NABIL "   
-sleep 4;
-	echo '========================================================================================================================='
-###########################################                                                                                                                  
-echo ". >>>>         RESTARING     <<<<"
-echo "**********************************************************************************"
+my_main_url="https://raw.githubusercontent.com/emil237/"
+my_ipk="quarterpounder-latest.ipk"
+package_dir='quarterpounder/main/'
+MY_URL=$my_main_url$package_dir'/'$my_ipk
+
+MY_TMP_FILE="/tmp/my_ipk"
+echo '**********************************************************'
+echo " download plugin "
+
+wget -T 2 $MY_URL -P "/tmp/"
+echo " install plugin "
+echo ""
+echo ""
+echo ''
+	if which dpkg > /dev/null 2>&1; then
+		apt-get install --reinstall $MY_TMP_FILE -y
+	else
+		opkg install --force-reinstall $MY_TMP_FILE
+	fi
+echo " *************************************************************************************************************************"
+echo "     WELCOME TO PLUGIN QUARTERPOUDER "
+echo "             UPLOADED BY EMIL_NABIL "
 wait
-killall -9 enigma2
+sleep 2;
 exit 0
-
-
-
-
-
-
-
-
-
 
 
 
