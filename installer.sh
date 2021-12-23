@@ -1,7 +1,7 @@
 #!/bin/sh # 
  # # Command: wget https://raw.githubusercontent.com/emil237/quarterpounder/main/installer.sh -qO - | /bin/sh # # ########################################### ###########################################  
 MY_URL="https://raw.githubusercontent.com/emil237/quarterpounder/main"
-MY_FILE="QuarterPounder.tar.gz"
+MY_IPK="QuarterPounder.tar.gz"
 echo "******************************************************************************************************************"
 echo "download and install quarterpounder"
 echo "============================================================================================================================="
@@ -9,7 +9,7 @@ echo "==========================================================================
 echo "         install plugin   "
 cd /tmp
 set -e 
-      wget "$MY_URL/$MY_FILE"
+      wget "$MY_URL/$MY_IPK"
 wait
 tar -xzf QuarterPounder.tar.gz  -C /
 wait
@@ -31,6 +31,8 @@ echo "**************************************************************************
 wait
 killall -9 enigma2
 exit 0
+
+
 
 
 
