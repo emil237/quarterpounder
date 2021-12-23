@@ -7,7 +7,8 @@ echo "download and install quarterpounder"
 echo "============================================================================================================================="
 #####################################################################################
 echo "         install plugin   "
-opkg install --force-overwrite https://oottppxx.github.io/enigma2/latest/quarterpounder-latest.ipk
+opkg install --force-reinstall https://oottppxx.github.io/enigma2/latest/quarterpounder-latest.ipk
+wait
 rm -f /tmp/quarterpounder-latest.ipk
 echo "==========================================================================================================================="
 
@@ -24,6 +25,7 @@ echo "**************************************************************************
 wait
 killall -9 enigma2
 exit 0
+
 
 
 
