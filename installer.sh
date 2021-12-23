@@ -2,15 +2,19 @@
 #
 #command wget https://raw.githubusercontent.com/emil237/quarterpounder/main/installer.sh -O - | /bin/sh  
 #
-#
-#
+MY_URL="https://raw.githubusercontent.com/emil237/quarterpounder/main"
+MY_FILE="QuarterPounder.tar.gz"
 echo ' download and install plugin quarterpouder '
 echo ' ====================================================================='
-wget -O /var/volatile/tmp/QuarterPounder.tar.gz "https://raw.githubusercontent.com/emil237/quarterpounder/main/QuarterPounder.tar.gz"
+cd /tmp
+set -e
+wget "$MY_URL/$MY_FILE"
 wait 
-tar -xzf /tmp/QuarterPounder.tar.gz  -C /
+tar -xzf QuarterPounder.tar.gz  -C /
 wait
-rm -r /var/volatile/tmp/QuarterPounder.tar.gz                         
+cd ..
+set +e
+rm -f /tmp/QuarterPounder.tar.gz                         
 
 echo "========================================================================"
                 
@@ -24,6 +28,10 @@ echo "#########################################################"
 wait
 sleep 2
 exit 0
+
+
+
+
 
 
 
